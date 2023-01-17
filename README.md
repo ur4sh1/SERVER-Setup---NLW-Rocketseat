@@ -9,6 +9,7 @@ Projeto criado no evento da Rocketseat NLW-Setup
 
 ## :wrench: Tecnologias utilizadas
 * Node.js
+* Fastify
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
@@ -34,13 +35,10 @@ Instalando o fastify
 ```
 npm i fastify
 ```
-Instalando o typescript como dependencia de desenvolvimento
+Instalando o typescript como dependência de desenvolvimento
 ```
 npm i typescript -D
 ```
-
-
-
 Criando o arquivo de sintax tsconfig do typescript
 ```
 npx tsc --init
@@ -61,6 +59,13 @@ Instalando plugin SQLite
 ```
 npx prisma init --datasource-provider SQLite
 ```
+Instalar o @fastify/cors (mecanismo de segurança que valida quem pode consumir ou não a API)
+```
+npm i @fastify/cors
+```
+
+
+
 Comando de criação de tabela com o prisma
 ```
 npx prisma migrate dev
@@ -82,10 +87,6 @@ generator erd {
 Executar o erd generator
 ```
 npx prisma generate
-```
-Instalar o @fastify/cors (mecanismo de segurança que valida quem pode consumir ou não a API)
-```
-npm i @fastify/cors
 ```
 Instalando o zod (schema validation)
 ```
