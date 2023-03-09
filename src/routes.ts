@@ -126,6 +126,8 @@ export async function appRoutes(app: FastifyInstance){
 
   app.get("/summary", async ()=>{
 
+    console.log('/summary')
+
     const summary = await prisma.$queryRaw`
      SELECT
       D.id,
