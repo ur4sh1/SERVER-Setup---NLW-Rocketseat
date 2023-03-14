@@ -1,7 +1,7 @@
-import { FastifyInstance } from "fastify";
-import { prisma } from "./lib/prisma";
-import { z } from 'zod';
 import dayjs from "dayjs";
+import { FastifyInstance } from "fastify";
+import { z } from 'zod';
+import { prisma } from "./lib/prisma";
 
 export async function appRoutes(app: FastifyInstance){
 
@@ -11,7 +11,7 @@ export async function appRoutes(app: FastifyInstance){
       title: z.string(),
       weekDays: z.array(z.number().min(0).max(6))
     })
-  
+
     const { title, weekDays } = createHabitBody.parse(request.body)
 
     const today = dayjs().startOf('day').toDate()
@@ -38,7 +38,7 @@ export async function appRoutes(app: FastifyInstance){
     });
 
     const { date } = getDayParams.parse(request.query);
-    
+
     const parsedDate = dayjs(date).startOf('day');
     const weekDay = parsedDate.get('day');
 
@@ -66,7 +66,7 @@ export async function appRoutes(app: FastifyInstance){
 
     const completedHabits = day?.dayHabits.map(dayHabits => {
       return dayHabits.habit_id
-    });
+    }) ?? [];
 
     return {
       possibleHabits,
