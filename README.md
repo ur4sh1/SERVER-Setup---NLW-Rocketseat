@@ -11,6 +11,9 @@ Projeto criado no evento da Rocketseat NLW-Setup
 * Node.js
 * Fastify
 * Zod
+* Docker
+* Prisma
+* Typescript
 
 ## :rocket: Rodando o projeto
 Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
