@@ -77,15 +77,19 @@ Instalando ERD Generator como dependencia de desenvolvimento
 npm i prisma-erd-generator @mermaid-js/mermaid-cli -D
 ```
 Inserir este codigo no schema.prisma<br>
-------
+<img align="center" title="Printscreen" src="https://github.com/ur4sh1/SERVER-Setup---NLW-Rocketseat/blob/main/printscreen/erd_generator.png" /><br>
 Executar o erd generator
 ```
 npx prisma generate
 ```
-Criando o arquivo 'seed' para polular o banco
--------
+Criando o arquivo 'seed' para polular o banco<br>
+<img align="center" title="Printscreen" src="https://github.com/ur4sh1/SERVER-Setup---NLW-Rocketseat/blob/main/printscreen/seed.png" /><br>
 Adicionando configuração no package.json para uso do seed pelo prisma
--------
+```
+"prisma": {
+  "seed": "tsx prisma/seed.ts"
+}
+```
 Executando o seed
 ```
 npx prisma db seed
@@ -111,4 +115,14 @@ npm i node-fetch
 Instalando jwt
 ```
 npm i @fastify/jwt
+```
+
+## :wrench: Docker
+Building image
+```
+docker build -t api-setup .
+```
+Run container in docker
+```
+docker run -d -p 3333:3333 --name api-setup api-setup
 ```
